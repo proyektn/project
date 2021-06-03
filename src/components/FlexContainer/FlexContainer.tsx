@@ -7,6 +7,7 @@ export type FlexContainerProps = {
 	align?: string
 	border?: boolean
 	height?: string
+	width?: string
 	grow?: boolean
 }
 

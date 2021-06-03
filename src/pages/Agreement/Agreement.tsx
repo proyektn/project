@@ -28,8 +28,8 @@ export const Agreement: React.FC = () => {
 
 	return (
 		<>
-			<FlexContainer border column height={'100%'} justify={'space-between'}>
-				<FlexContainer column height={'180px'}>
+			<FlexContainer border column height={'100%'} justify={'space-between'} align={'center'}>
+				<FlexContainer column height={'180px'} align={'center'}>
 					<Title margin={'50px 0'}>Вы получили ПРИГЛАШЕНИЕ</Title>
 					<SubTitle>Продолжая, вы принимаете соглашение</SubTitle>
 				</FlexContainer>

@@ -30,7 +30,7 @@ export const AuthStep2: React.FC = () => {
 		})
 	})
 	return (
-		<FlexContainer column border height={'100%'} justify={'flex-start'}>
+		<FlexContainer column border height={'100%'} justify={'flex-start'} align={'center'}>
 			<div>
 				<img src="/" alt="logo" />
 			</div>

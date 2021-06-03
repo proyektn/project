@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import mask from '../../assets/image/InputConfirm.svg'
+import mask from '../../../assets/image/InputConfirm.svg'
 
 export const StyledInputConfirmNumber = styled.input.attrs({type: 'tel'})`
   width: 192px;

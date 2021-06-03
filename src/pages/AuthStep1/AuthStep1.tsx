@@ -31,13 +31,13 @@ export const AuthStep1: React.FC = () => {
 	})
 
 	return (
-		<FlexContainer border column height={'100%'} justify='flex-start'>
+		<FlexContainer border column height={'100%'} justify='flex-start' align={'center'}>
 			<div>
 				<img src="/" alt="logo" />
 			</div>
 			<FormikProvider value={formik}>
 				<Form>
-					<FlexContainer column>
+					<FlexContainer column align={'center'}>
 						<InputNumber name={'phone'} />
 						<Text margin='10px 0 0 0'>Подтвердите номер через WHATSAPP или TELEGRAM</Text>
 						<RadioGroup name={'social'} />

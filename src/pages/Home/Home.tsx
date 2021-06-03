@@ -3,9 +3,10 @@ import React, {useRef, useState} from "react";
 import move from '../../assets/video/BestVideo.webm';
 import {FlexContainer} from "../../components/FlexContainer/FlexContainer";
 import {ScrollBlock} from "../../components/ScrollBlock/ScrollBlock";
+import {ItemVideo} from "../../components/ItemVideo/ItemVideo";
 
 export const Home: React.FC = () => {
-	const vidik = useRef(null)
+	const vidik = useRef()
 	const [play, setPlay] = useState(true)
 
 
@@ -17,35 +18,31 @@ export const Home: React.FC = () => {
 		}
 	}
 
+	const arr = [1, 2, 3, 4, 5, 6, 7]
+
 	return (
 		<>
 			<FlexContainer column border grow>
-				<header>
-					45px
-					<img src="/" alt="logo" />
-					<button>Фильтр</button>
-				</header>
+					<FlexContainer height={'45px'} justify={'space-between'}>
+						<img src="/" alt="logo" />
+						<button>Фильтр</button>
+					</FlexContainer>
+
 				<ScrollBlock onScroll={onScroll}>
-					<video ref={vidik} autoPlay={true} controls width='300px'>
-						<source src={move} />
-					</video>
-					<video autoPlay={false} controls width='300px'>
-						<source src={move} />
-					</video>
-					<video autoPlay={false} controls width='300px'>
-						<source src={move} />
-					</video>
+					{arr.map((elem, index) => {
+						return index === 0
+							? <ItemVideo key={index} autoPlay={true} ref={vidik} src={move}>Дополнительная информация</ItemVideo>
+							: <ItemVideo key={index} autoPlay={false} src={move}>Дополнительная информация</ItemVideo>
+					})}
 				</ScrollBlock>
 			</FlexContainer>
 			<footer>
-				<nav> 45px
-					<FlexContainer>
-						<button>Анкеты</button>
-						<button>Профиль</button>
-						<button>Инвайты</button>
-						<button>Оператор</button>
-					</FlexContainer>
-				</nav>
+				<FlexContainer height={'45px'} justify={'space-around'}>
+					<button>Анкеты</button>
+					<button>Профиль</button>
+					<button>Инвайты</button>
+					<button>Оператор</button>
+				</FlexContainer>
 			</footer>
 		</>
 	)

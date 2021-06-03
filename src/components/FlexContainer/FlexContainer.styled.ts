@@ -5,10 +5,11 @@ export const StyledFlexContainer = styled.div<FlexContainerProps>`
   display: flex;
   padding: 10px;
   flex-direction: ${({column}) => column ? 'column' : 'row'};
-  justify-content: ${({justify}) => justify ? justify : 'center'};
-  align-items: ${({align}) => align ? align : 'center'};
+  ${({justify}) => justify && css`justify-content: ${justify}`};
+  ${({align}) => align && css`align-items: ${align}`};
   ${({grow}) => grow && css`flex: 1 0 auto`};
-  ${({height}) => height && css`height: ${height}`};
+  ${({height}) => height && css`min-height: ${height}`};
+  ${({width}) => width && css`width: ${width}`};
   ${props => props.border && css`
     border: 2px solid ${props.theme.colors.gold}`};
 `

@@ -8,4 +8,8 @@ export const StyledScrollBlock = styled.div`
   padding: 10px;
   border: 1px solid ${props => props.theme.colors.gray};
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 `
