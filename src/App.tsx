@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import {Container} from "./components/Container/Container";
+import {Routes} from "./Routes/Routes";
+import {useDispatch, useSelector} from "react-redux";
+import {agreementSelector, authSelector} from "./redux/auth/auth.selector";
+import {authLoadLocalStorage} from "./redux/auth/auth.action";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const dispatch = useDispatch()
+	const isAuth = useSelector(authSelector)
+	const isAgreement = useSelector(agreementSelector)
+	useEffect(() => {
+		dispatch(authLoadLocalStorage(JSON.parse(localStorage.getItem('auth')!) ?? {
+			isAgreement: false,
+			isAuth: false
+		}))
+	}, [dispatch])
+
+	useEffect(() => {
+		localStorage.setItem('auth', JSON.stringify({isAgreement: isAgreement, isAuth: isAuth}))
+	}, [isAgreement, isAuth])
+	return (
+		<Container>
+			<Routes />
+		</Container>
+	);
 }
 
 export default App;
