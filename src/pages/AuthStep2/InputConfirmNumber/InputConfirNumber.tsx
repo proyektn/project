@@ -11,7 +11,7 @@ export const InputConfirmNumber: React.FC<InputConfirmNumberProps> = (props: any
 	return (
 		<ContainerImage>
 		<StyledCell>
-			<StyledInputConfirmNumber {...field} {...props} />
+			<StyledInputConfirmNumber {...field} {...props} maxLength={5}/>
 		</StyledCell>
 		</ContainerImage>
 	)

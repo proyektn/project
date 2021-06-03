@@ -12,9 +12,11 @@ export const RadioGroup: React.FC<RadioGroupProps> = (props: any) => {
 	return (
 		<FlexContainer>
 			<LabelRadio>
+				Telegram
 				<Radio {...props} {...field} value={'telegram'} />
 			</LabelRadio>
 			<LabelRadio>
+				Whatsapp
 				<Radio {...props} {...field} value={'whatsapp'} />
 			</LabelRadio>
 		</FlexContainer>

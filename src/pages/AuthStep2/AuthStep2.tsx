@@ -8,6 +8,7 @@ import {codeSelector} from "../../redux/auth/auth.selector";
 import {FlexContainer} from "../../components/FlexContainer/FlexContainer";
 import {Button} from "../../components/Button/Button";
 import {InputConfirmNumber} from "./InputConfirmNumber/InputConfirNumber";
+import {Title} from "../../components/Title/Title";
 
 export const AuthStep2: React.FC = () => {
 	const code = useSelector(codeSelector)
@@ -34,6 +35,7 @@ export const AuthStep2: React.FC = () => {
 			<div>
 				<img src="/" alt="logo" />
 			</div>
+			<Title>Код авторизации: {code}</Title>
 			<FormikProvider value={formik}>
 				<Form>
 					<FlexContainer column>

@@ -4,6 +4,7 @@ import {FlexContainerProps} from "./FlexContainer";
 export const StyledFlexContainer = styled.div<FlexContainerProps>`
   display: flex;
   padding: 10px;
+  background-color: inherit;
   flex-direction: ${({column}) => column ? 'column' : 'row'};
   ${({justify}) => justify && css`justify-content: ${justify}`};
   ${({align}) => align && css`align-items: ${align}`};

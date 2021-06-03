@@ -4,6 +4,7 @@ import move from '../../assets/video/BestVideo.webm';
 import {FlexContainer} from "../../components/FlexContainer/FlexContainer";
 import {ScrollBlock} from "../../components/ScrollBlock/ScrollBlock";
 import {ItemVideo} from "../../components/ItemVideo/ItemVideo";
+import {Popup} from "./Popup/Popup";
 
 export const Home: React.FC = () => {
 	const vidik = useRef()
@@ -23,10 +24,10 @@ export const Home: React.FC = () => {
 	return (
 		<>
 			<FlexContainer column border grow>
-					<FlexContainer height={'45px'} justify={'space-between'}>
-						<img src="/" alt="logo" />
-						<button>Фильтр</button>
-					</FlexContainer>
+				<FlexContainer height={'45px'} justify={'space-between'}>
+					<img src="/" alt="logo" />
+					<button>Фильтр</button>
+				</FlexContainer>
 
 				<ScrollBlock onScroll={onScroll}>
 					{arr.map((elem, index) => {
@@ -36,14 +37,13 @@ export const Home: React.FC = () => {
 					})}
 				</ScrollBlock>
 			</FlexContainer>
-			<footer>
-				<FlexContainer height={'45px'} justify={'space-around'}>
-					<button>Анкеты</button>
-					<button>Профиль</button>
-					<button>Инвайты</button>
-					<button>Оператор</button>
-				</FlexContainer>
-			</footer>
+			<Popup/>
+			<FlexContainer height={'45px'} justify={'space-around'}>
+				<button>Анкеты</button>
+				<button>Профиль</button>
+				<button>Инвайты</button>
+				<button>Оператор</button>
+			</FlexContainer>
 		</>
 	)
 }
